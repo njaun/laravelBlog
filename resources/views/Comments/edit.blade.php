@@ -10,7 +10,6 @@
     <button>Dzēst</button>
 </form>
 
-
 <h1>Komentāri</h1>
 
 <form method="POST" action="/comments">
@@ -29,7 +28,7 @@
 
 @foreach ($comments as $comment)
 <div>
-        <h3>{{ $comment->author }}</h2>
+        <h3>{{ $comment->author }}</h3>
         @if($comment_id == $comment->id)
             <form method="POST" action="/comments/{{ $comment->id }}">
                 @csrf
@@ -41,10 +40,10 @@
                 <p>{{ $message }}</p>
                 @enderror
         @else
-            <h3>{{ $comment->content }}</h2>
+            <h3>{{ $comment->content }}</h3>
         @endif
 
-        <h3>{{ $comment->created_at }}</h2>
+        <h3>{{ $comment->created_at }}</h3>
 
         @if($comment_id == $comment->id)
                 <button>Saglabāt</button>
